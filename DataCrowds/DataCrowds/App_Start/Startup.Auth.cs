@@ -54,9 +54,9 @@ namespace DataCrowds
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+                appId: "1742426612707817",
+                appSecret: "24b846779b0576c4b01f96fa35dbed4f" );
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

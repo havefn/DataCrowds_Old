@@ -10,7 +10,7 @@ namespace DataCrowds.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "DataCrowds.Models.ApplicationDbContext";
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(DataCrowds.Models.ApplicationDbContext context)
