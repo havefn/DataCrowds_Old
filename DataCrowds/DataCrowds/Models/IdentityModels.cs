@@ -29,5 +29,7 @@ namespace DataCrowds.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<DataCrowds.Models.ExampleModels> ExampleModels { get; set; }
     }
 }
