@@ -1,4 +1,4 @@
-namespace DataCrowds.Migrations
+namespace DataCrowds.Migrations.ApplicationDbContext
 {
     using System;
     using System.Data.Entity;
@@ -9,8 +9,8 @@ namespace DataCrowds.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationsEnabled = false;
+            MigrationsDirectory = @"Migrations\ApplicationDbContext";
         }
 
         protected override void Seed(DataCrowds.Models.ApplicationDbContext context)

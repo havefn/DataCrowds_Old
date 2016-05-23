@@ -19,12 +19,10 @@ namespace DataCrowds.Models
         {
         }
 
-        public System.Data.Entity.DbSet<DataCrowds.Models.Question> Questions { get; set; }
+        public DbSet<Question> Questions { get; set; }
 
-        public System.Data.Entity.DbSet<DataCrowds.Models.SurveyForm> SurveyForms { get; set; }
+        public DbSet<SurveyForm> SurveyForms { get; set; }
 
-        public System.Data.Entity.DbSet<DataCrowds.Models.Profile> Profiles { get; set; }
-
-        public System.Data.Entity.DbSet<DataCrowds.Models.DataSet> DataSets { get; set; }
+        public DbSet<DataSet> DataSets { get; set; }
     }
 }

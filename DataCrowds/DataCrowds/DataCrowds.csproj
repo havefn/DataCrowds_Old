@@ -175,7 +175,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\ApplicationDbContext\201605232139144_InitialDatabaseCreation.cs" />
+    <Compile Include="Migrations\ApplicationDbContext\201605232139144_InitialDatabaseCreation.Designer.cs">
+      <DependentUpon>201605232139144_InitialDatabaseCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationDbContext\Configuration.cs" />
+    <Compile Include="Migrations\DataCrowdsContext\201605232139405_InitialDatabaseCreation.cs" />
+    <Compile Include="Migrations\DataCrowdsContext\201605232139405_InitialDatabaseCreation.Designer.cs">
+      <DependentUpon>201605232139405_InitialDatabaseCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\DataCrowdsContext\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DataCrowdsContext.cs" />
     <Compile Include="Models\DataSetModels.cs" />
@@ -183,8 +192,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MarketplaceViewModels.cs" />
-    <Compile Include="Models\ProfileModels.cs" />
-    <Compile Include="Controllers\ProfilesController.cs" />
     <Compile Include="Models\QuestionModels.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Models\SurveyFormModels.cs" />
@@ -262,11 +269,6 @@
     <Content Include="Views\SurveyForms\Details.cshtml" />
     <Content Include="Views\SurveyForms\Edit.cshtml" />
     <Content Include="Views\SurveyForms\Index.cshtml" />
-    <Content Include="Views\Profiles\Create.cshtml" />
-    <Content Include="Views\Profiles\Delete.cshtml" />
-    <Content Include="Views\Profiles\Details.cshtml" />
-    <Content Include="Views\Profiles\Edit.cshtml" />
-    <Content Include="Views\Profiles\Index.cshtml" />
     <Content Include="Views\DataSets\Create.cshtml" />
     <Content Include="Views\DataSets\Delete.cshtml" />
     <Content Include="Views\DataSets\Details.cshtml" />
@@ -289,6 +291,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\ApplicationDbContext\201605232139144_InitialDatabaseCreation.resx">
+      <DependentUpon>201605232139144_InitialDatabaseCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\DataCrowdsContext\201605232139405_InitialDatabaseCreation.resx">
+      <DependentUpon>201605232139405_InitialDatabaseCreation.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
