@@ -1,6 +1,7 @@
 ﻿using DataCrowds.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -18,6 +19,7 @@ namespace DataCrowds.Models
 
         public string rewards { get; set; }
 
+        [Display(Name = "SurveyForm Numbers")]
         public int surveyFormId { get; set; }
     }
 }
