@@ -7,8 +7,12 @@ namespace DataCrowds.Models
 {
     public class Question
     {
+        public int Id { get; set; }
+
         public Boolean required { get; set; }
-        public String type { get; set; }
-        public String answer { get; set; }
+
+        public string type { get; set; }
+
+        public string answer { get; set; }
     }
 }
