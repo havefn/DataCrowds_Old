@@ -1,0 +1,9 @@
+﻿@model IEnumerable<DataCrowds.Models.DataSet>
+
+@foreach (var p in Model)
+{
+    <tr>
+        <td>@p.title</td>
+        <td>@p.description</td>
+    </tr>
+}

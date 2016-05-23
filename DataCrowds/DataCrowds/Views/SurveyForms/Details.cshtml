@@ -1,0 +1,50 @@
+﻿@model DataCrowds.Models.SurveyForm
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SurveyForm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxRespondents)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxRespondents)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rewards)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rewards)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.surveyFormId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.surveyFormId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
