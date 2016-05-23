@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System;
+using System.Collections.Generic;
 
 namespace DataCrowds.Models
 {
@@ -16,6 +18,14 @@ namespace DataCrowds.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public String name { get; set; }
+        public Profile userprofile { get; set; }
+        public List<DataSet> ownedData { get; set; }
+        public List<DataSet> boughtData { get; set; }
+        public List<SurveyForm>  ownedSurvey { get; set; }
+        public long balance { get; set; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
