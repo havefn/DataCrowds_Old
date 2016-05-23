@@ -6,7 +6,7 @@ using System.Web;
 
 namespace DataCrowds.Models
 {
-    public class SurveyFormModels
+    public class SurveyForm
     {
        List<Question> QuestionList { get; set; }
 
