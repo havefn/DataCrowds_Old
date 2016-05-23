@@ -14,7 +14,7 @@ namespace DataCrowds.Controllers
 
         // GET: Marketplace
         public ActionResult Index()
-        { 
+        {
             return View();
         }
 
@@ -26,5 +26,8 @@ namespace DataCrowds.Controllers
             f.title.StartsWith(keyword)).ToList();
             return PartialView(data);
         }
+
+
+
     }
 }
