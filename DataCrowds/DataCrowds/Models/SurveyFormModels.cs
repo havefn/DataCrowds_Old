@@ -8,10 +8,7 @@ namespace DataCrowds.Models
 {
     public class SurveyForm
     {
-        public List<Question> questionList { get; set; }
-        public String category { get; set; }
-        public int maxRespondents { get; set; }
-        public String rewards { get; set; }
-        public int surveyFormId { get; set; }
+       List<Question> QuestionList { get; set; }
+
     }
 }
