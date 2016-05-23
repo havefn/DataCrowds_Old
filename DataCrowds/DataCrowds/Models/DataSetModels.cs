@@ -10,7 +10,6 @@ namespace DataCrowds.Models
         public int dataSetId { get; set; }
         public String title { get; set; }
         public String description { get; set; }
-        public HttpPostedFileBase file { get; set; }
-        
+        public HttpPostedFileBase file { get; set; }        
     }
 }
