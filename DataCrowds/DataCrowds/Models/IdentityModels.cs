@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataCrowds.Models
 {
@@ -25,8 +26,11 @@ namespace DataCrowds.Models
         public List<DataSet> BoughtData { get; set; }
 
         public List<SurveyForm> SurveyForms { get; set; }
+        
+        public int ProfileId { get; set; }
 
-        public Profile Profile { get; set; }
+        [ForeignKey("ProfileId")]
+        public virtual Profile Profile { get; set; }
 
     }
 
