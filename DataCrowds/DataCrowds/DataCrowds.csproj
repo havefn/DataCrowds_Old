@@ -182,6 +182,7 @@
     <Compile Include="Controllers\DataSetsController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MarketplaceViewModels.cs" />
     <Compile Include="Models\ProfileModels.cs" />
     <Compile Include="Controllers\ProfilesController.cs" />
     <Compile Include="Models\QuestionModels.cs" />
@@ -198,6 +199,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="jquery.unobtrusive-ajax.js" />
+    <Content Include="jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Models\CrowdsDiagram.cd" />
@@ -205,6 +208,8 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -267,10 +272,11 @@
     <Content Include="Views\DataSets\Details.cshtml" />
     <Content Include="Views\DataSets\Edit.cshtml" />
     <Content Include="Views\DataSets\Index.cshtml" />
+    <Content Include="Views\Marketplace\index.cshtml" />
+    <Content Include="Views\Marketplace\_SearchDataSets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Marketplace\" />
     <Folder Include="Views\SurvCrowds\" />
   </ItemGroup>
   <ItemGroup>

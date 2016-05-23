@@ -2,6 +2,13 @@
 
 @{
     ViewBag.Title = "Index";
+    AjaxOptions options = new AjaxOptions
+    {
+        UpdateTargetId = "searchResult",
+        Confirm = "Are you sure to start search?",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "divLoading"
+    };
 }
 
 <h2>Index</h2>
