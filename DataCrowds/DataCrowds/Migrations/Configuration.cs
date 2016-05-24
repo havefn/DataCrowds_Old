@@ -5,15 +5,14 @@ namespace DataCrowds.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DataCrowds.Models.DataCrowdsContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DataCrowds.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "DataCrowds.Models.DataCrowdsContext";
         }
 
-        protected override void Seed(DataCrowds.Models.DataCrowdsContext context)
+        protected override void Seed(DataCrowds.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

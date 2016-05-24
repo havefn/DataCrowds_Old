@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace SurveyTool.Models
+namespace DataCrowds.Models
 {
     public class Question
     {

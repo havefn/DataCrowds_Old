@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using SurveyTool.Models;
+using DataCrowds.Models;
 
-namespace SurveyTool.Models
+namespace DataCrowds.Models
 {
     public class ReportViewModel
     {

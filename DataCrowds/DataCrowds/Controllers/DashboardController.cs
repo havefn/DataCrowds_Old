@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SurveyTool.Models;
 using DataCrowds.Models;
 
 namespace SurveyTool.Controllers
@@ -11,7 +10,7 @@ namespace SurveyTool.Controllers
     [Authorize]
     public class DashboardController : Controller
     {
-        private DataCrowdsContext db = new DataCrowdsContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         [HttpGet]
         public ActionResult Index()

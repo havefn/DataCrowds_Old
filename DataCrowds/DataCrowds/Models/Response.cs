@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace SurveyTool.Models
+namespace DataCrowds.Models
 {
     public class Response
     {
         [Key]
         public int Id { get; set; }
 
-        public int SurveyId { get; set; }
+        public int ? SurveyId { get; set; }
 
-        public Survey Survey { get; set; }
+        public virtual Survey Survey { get; set; }
 
         public string CreatedBy { get; set; }
 

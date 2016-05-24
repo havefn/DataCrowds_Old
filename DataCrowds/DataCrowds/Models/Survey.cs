@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace SurveyTool.Models
+namespace DataCrowds.Models
 {
     public class Survey
     {
@@ -26,7 +26,7 @@ namespace SurveyTool.Models
 
         public List<Question> Questions { get; set; }
 
-        public List<Response> Responses { get; set; }
+        public virtual List<Response>  Responses { get; set; }
 
         public bool IsActive
         {

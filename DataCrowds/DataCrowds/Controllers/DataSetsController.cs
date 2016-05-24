@@ -11,7 +11,7 @@ namespace DataCrowds.Models
 {
     public class DataSetsController : Controller
     {
-        private DataCrowdsContext db = new DataCrowdsContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: DataSets
         public ActionResult Index()

@@ -37,6 +37,17 @@ namespace DataCrowds.Models
         {
             return new ApplicationDbContext();
         }
-        
+
+        public DbSet<Question> Questions { get; set; }
+
+        public DbSet<DataSet> DataSets { get; set; }
+
+        public DbSet<Response> Responses { get; set; }
+
+        public DbSet<Survey> Surveys { get; set; }
+
+        public DbSet<Answer> Answers { get; set; }
+
+
     }
 }

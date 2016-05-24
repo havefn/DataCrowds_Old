@@ -10,7 +10,7 @@ namespace DataCrowds.Controllers
 {
     public class MarketplaceController : Controller
     {
-        private DataCrowdsContext db = new DataCrowdsContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Marketplace
         public ActionResult Index()
@@ -23,7 +23,7 @@ namespace DataCrowds.Controllers
         {
             System.Threading.Thread.Sleep(2000);
             var data = db.DataSets.Where(f =>
-            f.title.StartsWith(keyword)).ToList();
+            f.title.Contains(keyword)).ToList();
             return PartialView(data);
         }
     }
