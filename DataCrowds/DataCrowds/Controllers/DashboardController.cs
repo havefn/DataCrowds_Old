@@ -4,18 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SurveyTool.Models;
+using DataCrowds.Models;
 
 namespace SurveyTool.Controllers
 {
     [Authorize]
     public class DashboardController : Controller
     {
-        private readonly ApplicationDbContext _db;
-
-        public DashboardController(ApplicationDbContext db)
-        {
-            _db = db;
-        }
+        private DataCrowdsContext db = new DataCrowdsContext();
 
         [HttpGet]
         public ActionResult Index()
@@ -27,8 +23,8 @@ namespace SurveyTool.Controllers
 
         private IEnumerable<Survey> GetSurveys()
         {
-            return _db.Surveys
-                      .Select(s => new
+            return db.Surveys
+                     .Select(s => new
                           {
                               Survey = s,
                               Questions = s.Questions.Where(q => q.IsActive),
@@ -50,7 +46,7 @@ namespace SurveyTool.Controllers
 
         private IEnumerable<Response> GetResponses()
         {
-            return _db.Responses
+            return db.Responses
                      .Include("Survey")
                      .Include("Answers")
                      .Where(x => x.CreatedBy == User.Identity.Name)

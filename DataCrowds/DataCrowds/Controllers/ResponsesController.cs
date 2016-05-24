@@ -5,23 +5,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SurveyTool.Models;
+using DataCrowds.Models;
 
 namespace SurveyTool.Controllers
 {
     [Authorize]
     public class ResponsesController : Controller
     {
-        private readonly ApplicationDbContext _db;
-
-        public ResponsesController(ApplicationDbContext db)
-        {
-            _db = db;
-        }
+        private DataCrowdsContext db = new DataCrowdsContext();
 
         [HttpGet]
         public ActionResult Index(int surveyId)
         {
-            var responses = _db.Responses
+            var responses = db.Responses
                                .Include("Survey")
                                .Include("Answers")
                                .Include("Answers.Question")
@@ -37,7 +33,7 @@ namespace SurveyTool.Controllers
         [HttpGet]
         public ActionResult Details(int surveyId, int id)
         {
-            var response = _db.Responses
+            var response = db.Responses
                               .Include("Survey")
                               .Include("Answers")
                               .Include("Answers.Question")
@@ -52,7 +48,7 @@ namespace SurveyTool.Controllers
         [HttpGet]
         public ActionResult Create(int surveyId)
         {
-            var survey = _db.Surveys
+            var survey = db.Surveys
                             .Where(s => s.Id == surveyId)
                             .Select(s => new
                                 {
@@ -79,8 +75,8 @@ namespace SurveyTool.Controllers
             model.SurveyId = surveyId;
             model.CreatedBy = User.Identity.Name;
             model.CreatedOn = DateTime.Now;
-            _db.Responses.Add(model);
-            _db.SaveChanges();
+            db.Responses.Add(model);
+            db.SaveChanges();
 
             TempData["success"] = "Your response was successfully saved!";
 
@@ -93,8 +89,8 @@ namespace SurveyTool.Controllers
         public ActionResult Delete(int surveyId, int id, string returnTo)
         {
             var response = new Response() { Id = id, SurveyId = surveyId };
-            _db.Entry(response).State = EntityState.Deleted;
-            _db.SaveChanges();
+            db.Entry(response).State = EntityState.Deleted;
+            db.SaveChanges();
             return Redirect(returnTo ?? Url.RouteUrl("Root"));
         }
     }

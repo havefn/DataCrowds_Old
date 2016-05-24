@@ -5,23 +5,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SurveyTool.Models;
+using DataCrowds.Models;
 
 namespace SurveyTool.Controllers
 {
     [Authorize]
     public class ReportsController : Controller
     {
-        private readonly ApplicationDbContext _db;
+        private DataCrowdsContext db = new DataCrowdsContext();
 
-        public ReportsController(ApplicationDbContext db)
-        {
-            _db = db;
-        }
+       
 
         [HttpGet]
         public ActionResult Index()
         {
-            var surveys = _db.Surveys.ToList();
+            var surveys = db.Surveys.ToList();
             return View(surveys);
         }
 
@@ -32,9 +30,9 @@ namespace SurveyTool.Controllers
             startDate = startDate ?? new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             endDate = endDate ?? DateTime.Now;
 
-            var survey = _db.Surveys.Single(s => s.Id == id);
+            var survey = db.Surveys.Single(s => s.Id == id);
 
-            _db.Questions
+            db.Questions
                .Where(q => q.SurveyId == id)
                .OrderBy(q => q.Priority)
                .Select(q => new
@@ -42,7 +40,7 @@ namespace SurveyTool.Controllers
                        q.Title,
                        q.Body,
                        q.Type,
-                       Answers = _db.Answers.Where(a => a.QuestionId == q.Id &&
+                       Answers = db.Answers.Where(a => a.QuestionId == q.Id &&
                                                         a.Response.CreatedOn >= startDate.Value &&
                                                         a.Response.CreatedOn <= endDate.Value)
                    })

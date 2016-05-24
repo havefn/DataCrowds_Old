@@ -14,7 +14,7 @@ namespace DataCrowds.Models
 
         public List<DataSet> BoughtData { get; set; }
 
-        public List<SurveyForm> SurveyForms { get; set; }
+        
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

@@ -1,9 +1,9 @@
-namespace DataCrowds.Migrations.DataCrowdsContext
+namespace DataCrowds.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialDatabaseCreation : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -24,7 +24,7 @@ namespace DataCrowds.Migrations.DataCrowdsContext
                         Id = c.Int(nullable: false, identity: true),
                         birthDate = c.DateTime(nullable: false),
                         occupation = c.String(),
-                        gender = c.Int(nullable: false),
+                        gender = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
