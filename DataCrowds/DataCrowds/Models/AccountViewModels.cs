@@ -5,9 +5,24 @@ namespace DataCrowds.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
-        [Required]
+
+        [Required(ErrorMessage = "The username is required")]
+        [Display(Name = "Username")]
+        public string username { get; set; }
+
+        [Required(ErrorMessage = "The email address is required")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        /*[Required]
+        public DateTime birthDate { set; get; }
+
+        [Required]
+        public string occupation { get; set; }
+
+        [Required]
+        public Gender gender { get; set; }*/
     }
 
     public class ExternalLoginListViewModel
@@ -65,6 +80,10 @@ namespace DataCrowds.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Username")]
+        public string Username { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -79,6 +98,7 @@ namespace DataCrowds.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        
     }
 
     public class ResetPasswordViewModel

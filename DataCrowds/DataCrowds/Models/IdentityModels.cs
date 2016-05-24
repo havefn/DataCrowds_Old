@@ -4,13 +4,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataCrowds.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public List<DataSet> OwnedData { get; set; }
+
+        public List<DataSet> BoughtData { get; set; }
+
+        
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -18,19 +23,6 @@ namespace DataCrowds.Models
             // Add custom user claims here
             return userIdentity;
         }
-
-        public string username { get; set; }
-
-        public List<DataSet> OwnedData { get; set; }
-
-        public List<DataSet> BoughtData { get; set; }
-
-        public List<SurveyForm> SurveyForms { get; set; }
-        
-        public int ProfileId { get; set; }
-
-        [ForeignKey("ProfileId")]
-        public virtual Profile Profile { get; set; }
 
     }
 
@@ -45,6 +37,17 @@ namespace DataCrowds.Models
         {
             return new ApplicationDbContext();
         }
-        
+
+        public DbSet<Question> Questions { get; set; }
+
+        public DbSet<DataSet> DataSets { get; set; }
+
+        public DbSet<Response> Responses { get; set; }
+
+        public DbSet<Survey> Surveys { get; set; }
+
+        public DbSet<Answer> Answers { get; set; }
+
+
     }
 }

@@ -168,27 +168,32 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarketplaceController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\ResponsesController.cs" />
     <Compile Include="Controllers\SurvCrowdsController.cs" />
+    <Compile Include="Controllers\SurveysController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605241336529_initial.cs" />
+    <Compile Include="Migrations\201605241336529_initial.Designer.cs">
+      <DependentUpon>201605241336529_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\DataCrowdsContext.cs" />
+    <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\DataSetModels.cs" />
     <Compile Include="Controllers\DataSetsController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\MarketplaceViewModels.cs" />
-    <Compile Include="Models\ProfileModels.cs" />
-    <Compile Include="Controllers\ProfilesController.cs" />
-    <Compile Include="Models\QuestionModels.cs" />
-    <Compile Include="Controllers\QuestionsController.cs" />
-    <Compile Include="Models\SurveyFormModels.cs" />
-    <Compile Include="Controllers\SurveyFormsController.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\ReportViewModel.cs" />
+    <Compile Include="Models\Response.cs" />
+    <Compile Include="Models\Survey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -201,7 +206,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Models\CrowdsDiagram.cd" />
+    <None Include="Properties\PublishProfiles\DataCrowds.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -216,7 +221,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -250,21 +257,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Questions\Create.cshtml" />
-    <Content Include="Views\Questions\Delete.cshtml" />
-    <Content Include="Views\Questions\Details.cshtml" />
-    <Content Include="Views\Questions\Edit.cshtml" />
-    <Content Include="Views\Questions\Index.cshtml" />
-    <Content Include="Views\SurveyForms\Create.cshtml" />
-    <Content Include="Views\SurveyForms\Delete.cshtml" />
-    <Content Include="Views\SurveyForms\Details.cshtml" />
-    <Content Include="Views\SurveyForms\Edit.cshtml" />
-    <Content Include="Views\SurveyForms\Index.cshtml" />
-    <Content Include="Views\Profiles\Create.cshtml" />
-    <Content Include="Views\Profiles\Delete.cshtml" />
-    <Content Include="Views\Profiles\Details.cshtml" />
-    <Content Include="Views\Profiles\Edit.cshtml" />
-    <Content Include="Views\Profiles\Index.cshtml" />
     <Content Include="Views\DataSets\Create.cshtml" />
     <Content Include="Views\DataSets\Delete.cshtml" />
     <Content Include="Views\DataSets\Details.cshtml" />
@@ -272,6 +264,19 @@
     <Content Include="Views\DataSets\Index.cshtml" />
     <Content Include="Views\Marketplace\index.cshtml" />
     <Content Include="Views\Marketplace\_SearchDataSets.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Reports\Details.cshtml" />
+    <Content Include="Views\Reports\DisplayTemplates\Responses.cshtml" />
+    <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\Responses\Create.cshtml" />
+    <Content Include="Views\Responses\Details.cshtml" />
+    <Content Include="Views\Responses\Index.cshtml" />
+    <Content Include="Views\Surveys\Create.cshtml" />
+    <Content Include="Views\Surveys\DisplayTemplates\IsActive.cshtml" />
+    <Content Include="Views\Surveys\Edit.cshtml" />
+    <Content Include="Views\Surveys\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Surveys\EditorTemplates\Survey.cshtml" />
+    <Content Include="Views\Surveys\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -287,6 +292,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605241336529_initial.resx">
+      <DependentUpon>201605241336529_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

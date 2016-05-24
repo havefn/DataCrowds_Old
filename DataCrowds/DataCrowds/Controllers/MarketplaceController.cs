@@ -10,7 +10,7 @@ namespace DataCrowds.Controllers
 {
     public class MarketplaceController : Controller
     {
-        private DataCrowdsContext db = new DataCrowdsContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Marketplace
         public ActionResult Index()
