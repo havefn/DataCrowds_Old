@@ -24,7 +24,7 @@ namespace DataCrowds.Models
 
         public DateTime EndDate { get; set; }
 
-        public List<Question> Questions { get; set; }
+        public virtual List<Question> Questions { get; set; }
 
         public virtual List<Response>  Responses { get; set; }
 
