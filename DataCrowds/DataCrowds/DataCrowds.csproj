@@ -206,8 +206,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="jquery.unobtrusive-ajax.js" />
-    <Content Include="jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Models\CrowdsDiagram.cd" />
