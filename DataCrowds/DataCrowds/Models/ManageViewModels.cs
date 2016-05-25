@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using System;
 
 namespace DataCrowds.Models
 {
     public class IndexViewModel
     {
-        
+        public string username { get; set; }
         public bool HasPassword { get; set; }
         public IList<UserLoginInfo> Logins { get; set; }
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
-        public IList<DataSet> boughtData { get; set; }
+        public DateTime birthDate { set; get; }
+        public string occupation { get; set; }
+        public string gender { get; set; }
+        public string email { get; set; }
     }
 
     public class ManageLoginsViewModel

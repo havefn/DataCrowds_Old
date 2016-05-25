@@ -109,6 +109,9 @@ namespace DataCrowds.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        birthDate = c.DateTime(nullable: false),
+                        occupation = c.String(),
+                        gender = c.String(),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),

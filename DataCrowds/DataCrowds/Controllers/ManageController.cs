@@ -17,6 +17,7 @@ namespace DataCrowds.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public ManageController()
         {
@@ -70,6 +71,11 @@ namespace DataCrowds.Controllers
             var user = db.Users.Include("BoughtData").Single(x => x.Id == userId);
             var model = new IndexViewModel
             {
+                birthDate = db.Users.Find(userId).birthDate,
+                occupation = db.Users.Find(userId).occupation,
+                gender = db.Users.Find(userId).gender,
+                username = User.Identity.Name,
+                email = db.Users.Find(userId).Email,
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
