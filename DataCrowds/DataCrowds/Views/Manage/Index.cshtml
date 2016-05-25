@@ -10,17 +10,16 @@
     <h4>Change your account settings</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>Username:</dt><dd>@Model.username</dd>
-        <dt>Email Address:</dt><dd>@Model.email</dd>
-        <dt>Occupation:</dt><dd>@Model.occupation </dd>
-        <dt>Birth Date:</dt><dd>@Model.birthDate.Date</dd>
-        <dt>Gender:</dt><dd>@Model.gender</dd>
+        <dt>Username:</dt>
+        <dd>
+               @Model.username [@Html.ActionLink("Change", "ChangeUsername")]
+        </dd>
         <dt>Password:</dt>
         <dd>
             [
             @if (Model.HasPassword)
             {
-                @Html.ActionLink("Change your password", "ChangePassword")
+                @Html.ActionLink("Change", "ChangePassword")
             }
             else
             {
@@ -28,6 +27,24 @@
             }
             ]
         </dd>
+        <dt>Email Address:</dt>
+        <dd>
+                @Model.email [@Html.ActionLink("Change", "ChangeEmail")]
+        </dd>
+        <dt>Occupation:</dt>
+        <dd>
+                @Model.occupation [@Html.ActionLink("Change", "ChangeJob")]
+        </dd>
+        <dt>Gender:</dt>
+        <dd>
+            @Model.gender [@Html.ActionLink("Change", "ChangeGender")]
+        </dd>
+        <dt>Birth Date:</dt>
+        <dd>
+                @Model.birthDate.Date
+        </dd>
+        
+        
         <dt>External Logins:</dt>
         <dd>
             @Model.Logins.Count [
