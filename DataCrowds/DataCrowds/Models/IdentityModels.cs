@@ -10,11 +10,15 @@ namespace DataCrowds.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public List<DataSet> OwnedData { get; set; }
+        public virtual List<DataSet> OwnedData { get; set; }
 
-        public List<DataSet> BoughtData { get; set; }
+        public virtual List<DataSet> BoughtData { get; set; }
 
-        
+        public ApplicationUser()
+        {
+            OwnedData = new List<DataSet>();
+            BoughtData = new List<DataSet>();
+        }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -47,7 +51,6 @@ namespace DataCrowds.Models
         public DbSet<Survey> Surveys { get; set; }
 
         public DbSet<Answer> Answers { get; set; }
-
-
+        public object DataSet { get; internal set; }
     }
 }

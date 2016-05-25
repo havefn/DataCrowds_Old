@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using DataCrowds.Models;
+using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace DataCrowds.Controllers
 {
@@ -50,6 +52,7 @@ namespace DataCrowds.Controllers
             }
         }
 
+        private ApplicationDbContext db = new ApplicationDbContext();
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
@@ -64,13 +67,16 @@ namespace DataCrowds.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+            var user = db.Users.Include("BoughtData").Single(x => x.Id == userId);
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+                boughtData = user.BoughtData
+
             };
             return View(model);
         }
