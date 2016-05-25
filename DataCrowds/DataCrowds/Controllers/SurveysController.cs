@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DataCrowds.Models;
+using Microsoft.AspNet.Identity;
 
 namespace SurveyTool.Controllers
 {
@@ -27,8 +28,9 @@ namespace SurveyTool.Controllers
             var survey = new Survey
                 {
                     StartDate = DateTime.Now,
-                    EndDate = DateTime.Now.AddYears(1)
-                };
+                    EndDate = DateTime.Now.AddYears(1),
+                    UserId = User.Identity.GetUserId(),
+            };
 
             return View(survey);
         }

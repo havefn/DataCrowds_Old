@@ -56,6 +56,18 @@ namespace DataCrowds.Models
             if (ModelState.IsValid)
             {
                 db.DataSets.Add(dataSet);
+
+                var userId = User.Identity.GetUserId();
+                DataSet data = db.DataSets.Find(dataSet.Id);
+                if (data == null)
+                {
+                    return HttpNotFound();
+                }
+
+                var user = db.Users.Include("OwnedData").Single(x => x.Id == userId);
+                user.OwnedData.Add(data);
+                data.UserId = userId;
+                
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

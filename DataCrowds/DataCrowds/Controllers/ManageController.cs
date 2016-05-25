@@ -68,7 +68,8 @@ namespace DataCrowds.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
-            var user = db.Users.Include("BoughtData").Single(x => x.Id == userId);
+            var user1 = db.Users.Include("BoughtData").Single(x => x.Id == userId);
+            var user2 = db.Users.Include("OwnedData").Single(x => x.Id == userId);
             var model = new IndexViewModel
             {
                 birthDate = db.Users.Find(userId).birthDate,
@@ -81,8 +82,8 @@ namespace DataCrowds.Controllers
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
-                BoughtData = user.BoughtData
-
+                BoughtData = user1.BoughtData,
+                OwnedData = user2.OwnedData
             };
             return View(model);
         }
