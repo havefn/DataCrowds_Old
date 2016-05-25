@@ -24,7 +24,7 @@ namespace DataCrowds.Models
         public string Title { get; set; }
         public string Body { get; set; }
         public string Type { get; set; }
-        public List<Answer> Answers { get; set; }
+        public virtual List<Answer> Answers { get; set; }
 
         public int Score
         {
