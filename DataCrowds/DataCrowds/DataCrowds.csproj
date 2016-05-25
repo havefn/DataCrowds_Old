@@ -172,20 +172,16 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarketplaceController.cs" />
-    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Models\ReportsController.cs" />
     <Compile Include="Controllers\ResponsesController.cs" />
     <Compile Include="Controllers\SurvCrowdsController.cs" />
     <Compile Include="Controllers\SurveysController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605241913268_initial.cs" />
-    <Compile Include="Migrations\201605241913268_initial.Designer.cs">
-      <DependentUpon>201605241913268_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605241606130_update dataset.cs" />
-    <Compile Include="Migrations\201605241606130_update dataset.Designer.cs">
-      <DependentUpon>201605241606130_update dataset.cs</DependentUpon>
+    <Compile Include="Migrations\201605251253405_initial.cs" />
+    <Compile Include="Migrations\201605251253405_initial.Designer.cs">
+      <DependentUpon>201605251253405_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -372,11 +368,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605241913268_initial.resx">
-      <DependentUpon>201605241913268_initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605241606130_update dataset.resx">
-      <DependentUpon>201605241606130_update dataset.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605251253405_initial.resx">
+      <DependentUpon>201605251253405_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

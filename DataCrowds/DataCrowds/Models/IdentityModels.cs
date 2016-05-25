@@ -26,9 +26,9 @@ namespace DataCrowds.Models
 
         }
 
-        public virtual List<DataSet> OwnedData { get; set; }
+        public List<DataSet> OwnedData { get; set; }
 
-        public virtual List<DataSet> BoughtData { get; set; }
+        public List<DataSet> BoughtData { get; set; }
 
         public DateTime birthDate { set; get; }
 

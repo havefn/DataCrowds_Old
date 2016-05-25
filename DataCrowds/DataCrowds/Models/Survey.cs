@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataCrowds.Models
 {
@@ -19,6 +20,8 @@ namespace DataCrowds.Models
         public int Id { get; set; }
 
         public string Name { get; set; }
+        
+        public string UserId { get; set; }
 
         public DateTime StartDate { get; set; }
 
