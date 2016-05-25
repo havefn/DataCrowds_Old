@@ -1,2 +1,9 @@
 body {
 }
+
+#response {
+    .bar {
+        padding: 0 0;
+        background-color: lighten(rgb(56, 167, 187), 20%);
+    }
+}

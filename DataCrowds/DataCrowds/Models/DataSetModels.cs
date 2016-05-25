@@ -15,7 +15,11 @@ namespace DataCrowds.Models
 
         public string description { get; set; }
 
+        public List<QuestionViewModel> QuestionList { get; set; }
+
         [NotMapped]
-        public HttpPostedFileBase file { get; set; }        
+        public HttpPostedFileBase file { get; set; }
+
+        
     }
 }

@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201605241606130_update dataset.Designer.cs">
       <DependentUpon>201605241606130_update dataset.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605252013147_add question model key.cs" />
+    <Compile Include="Migrations\201605252013147_add question model key.Designer.cs">
+      <DependentUpon>201605252013147_add question model key.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -377,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605241606130_update dataset.resx">
       <DependentUpon>201605241606130_update dataset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605252013147_add question model key.resx">
+      <DependentUpon>201605252013147_add question model key.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

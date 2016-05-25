@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using SurveyTool.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -109,6 +110,15 @@ namespace DataCrowds.Models
             return View(dataSet);
         }
 
+        public ActionResult DownloadFromQL(int id)
+        {
+            DataSet temp = db.DataSets.Include("QuestionList").Single(x => x.Id == id);
+
+            ReportsCSVExporter.WriteToCSV(temp.QuestionList);
+
+            return RedirectToAction("Index", "DataSet", new { id = temp.Id });
+        }
+
         // POST: DataSets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -128,5 +138,7 @@ namespace DataCrowds.Models
             }
             base.Dispose(disposing);
         }
+
+        
     }
 }

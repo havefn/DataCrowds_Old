@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DataCrowds.Models;
+using Microsoft.AspNet.Identity;
 
 namespace SurveyTool.Controllers
 {
@@ -93,6 +94,43 @@ namespace SurveyTool.Controllers
             db.Entry(survey).State = EntityState.Deleted;
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult GenerateDataSet(int id)
+        {
+            var userId = User.Identity.GetUserId();
+            var questions = new List<QuestionViewModel>();
+
+            var survey = db.Surveys.Single(s => s.Id == id);
+
+            db.Questions
+               .Where(q => q.SurveyId == id)
+               .OrderBy(q => q.Priority)
+               .Select(q => new
+               {
+                   q.Title,
+                   q.Body,
+                   q.Type,
+                   Answers = db.Answers.Where(a => a.QuestionId == q.Id )
+               })
+               .ToList()
+               .ForEach(r => questions.Add(new QuestionViewModel
+               {
+                   Title = r.Title,
+                   Body = r.Body,
+                   Type = r.Type,
+                   Answers = r.Answers.ToList()
+               }));
+
+
+            DataSet temp = new DataSet();
+            temp.title = survey.Name;
+            temp.QuestionList = questions;
+            db.DataSets.Add(temp);
+            db.Users.Find(userId).OwnedData.Add(temp);
+            db.SaveChanges();
+
+            return RedirectToAction("Index","Marketplace");
         }
     }
 }

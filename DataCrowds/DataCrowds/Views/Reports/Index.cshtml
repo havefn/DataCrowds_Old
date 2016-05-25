@@ -13,6 +13,7 @@
     {
         <li>
             <a href="@Url.Action("Details", new { id = survey.Id })">@survey.Name</a>
+            <a href="@Url.Action("DownloadReports", new { id = survey.Id })">Downloads</a>
         </li>
     }
 </ul>

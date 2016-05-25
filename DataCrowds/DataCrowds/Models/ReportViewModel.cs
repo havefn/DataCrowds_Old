@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using DataCrowds.Models;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
 
 namespace DataCrowds.Models
 {
@@ -11,10 +13,14 @@ namespace DataCrowds.Models
         public DateTime EndDate { get; set; }
         public Survey Survey { get; set; }
         public List<QuestionViewModel> Responses { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase file { get; set; }
     }
 
     public class QuestionViewModel
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
         public string Type { get; set; }
