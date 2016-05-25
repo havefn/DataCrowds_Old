@@ -35,5 +35,6 @@
 <div class="row">
     <div class="span12">
         @Html.DisplayFor(x => x.Responses, "Responses")
+        <a href="@Url.Action("DownloadReports", new { id = survey.Id })">Downloads</a>
     </div>
 </div>

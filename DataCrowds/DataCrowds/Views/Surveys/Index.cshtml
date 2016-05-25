@@ -50,6 +50,11 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="@Url.Action("GenerateDataSet", new {id = item.Id})">
+                                    <i class="icon-pencil"></i> Sell
+                                </a>
+                            </li>
+                            <li>
                                 <a href="@Url.Action("Delete", new {id = item.Id})" data-bind="click: destroy">
                                     <i class="icon-trash"></i> Delete
                                 </a>
