@@ -13,7 +13,7 @@ namespace DataCrowds.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201605241336529_initial"; }
+            get { return "201605241913268_initial"; }
         }
         
         string IMigrationMetadata.Source

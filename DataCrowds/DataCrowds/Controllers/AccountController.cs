@@ -152,10 +152,12 @@ namespace DataCrowds.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser {
-                    UserName = model.Username,
+                    UserName = model.username,
                     Email = model.Email,
-                    
-                };
+                    birthDate = (DateTime)model.birthDate,
+                    occupation = model.occupation,
+                    gender = model.gender
+    };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -374,7 +376,9 @@ namespace DataCrowds.Controllers
                 var user = new ApplicationUser {
                     UserName = model.username,
                     Email = model.Email,
-                   
+                    birthDate = (DateTime)model.birthDate,
+                    occupation = model.occupation,
+                    gender = model.gender
                 };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)

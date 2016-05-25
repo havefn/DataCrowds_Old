@@ -4,18 +4,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
+using System;
 
 namespace DataCrowds.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public List<DataSet> OwnedData { get; set; }
-
-        public List<DataSet> BoughtData { get; set; }
-
-        
-
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -24,6 +19,22 @@ namespace DataCrowds.Models
             return userIdentity;
         }
 
+        public ApplicationUser() {
+
+            OwnedData = new List<DataSet>();
+            BoughtData  = new List<DataSet>();
+
+        }
+
+        public virtual List<DataSet> OwnedData { get; set; }
+
+        public virtual List<DataSet> BoughtData { get; set; }
+
+        public DateTime birthDate { set; get; }
+
+        public string occupation { get; set; }
+
+        public string gender { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
