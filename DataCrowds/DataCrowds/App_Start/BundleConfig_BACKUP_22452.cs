@@ -43,11 +43,17 @@ namespace DataCrowds
                             "~/Content/style.default.css",
                             "~/Content/Main.css"));
 
-            bundles.Add(new StyleBundle("~/Content/cssowl").Include(
+            bundles.Add(new StyleBundle("~/Content/css/owl").Include(
                             "~/Content/owl.carousel.css",
+<<<<<<< Updated upstream
+                            "~/Content/owl.theme.css"));
+                      "~/Content/bootstrap.css",
+                      "~/Content/site.css"));
+=======
                             "~/Content/owl.theme.css",
                             "~/Content/bootstrap.css",
                             "~/Content/site.css"));
+>>>>>>> Stashed changes
 
             // ====================================================================================
             // STYLES

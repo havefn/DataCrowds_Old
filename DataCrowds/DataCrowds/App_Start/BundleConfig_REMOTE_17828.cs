@@ -43,7 +43,7 @@ namespace DataCrowds
                             "~/Content/style.default.css",
                             "~/Content/Main.css"));
 
-            bundles.Add(new StyleBundle("~/Content/cssowl").Include(
+            bundles.Add(new StyleBundle("~/Content/css/owl").Include(
                             "~/Content/owl.carousel.css",
                             "~/Content/owl.theme.css",
                             "~/Content/bootstrap.css",
