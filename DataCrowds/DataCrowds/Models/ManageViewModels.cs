@@ -18,6 +18,9 @@ namespace DataCrowds.Models
         public string occupation { get; set; }
         public string gender { get; set; }
         public string email { get; set; }
+
+        public List<DataSet> OwnedData { get; set; }
+        public List<DataSet> BoughtData { get; set; }
     }
 
     public class ManageLoginsViewModel
