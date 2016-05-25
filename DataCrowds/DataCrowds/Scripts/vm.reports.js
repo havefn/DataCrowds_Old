@@ -4,6 +4,7 @@
     // Properties
 
     self.modal = $('#add-question');
+  
     self.questions = ko.observableArray([]);
     self.current = ko.observable();
 
@@ -17,14 +18,16 @@
     
     // Functions
 
-    self.newQuestion = function() {
+    self.newQuestion = function () {
         self.current(new QuestionModel());
         self.modal.modal();
+        
     };
 
     self.editQuestion = function(item) {
-        self.current(item);
+        self.current(item); 
         self.modal.modal();
+        
     };
 
     self.saveQuestion = function(item) {

@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Buy DataSet Confirmed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model DataCrowds.Models.ReceiptView
+
+<h2>BuyDataSet Confirmed</h2>
+<body>
+    @Html.DisplayFor(m => Model.User.UserName)
+    @Html.DisplayFor(m => Model.boughtData.title)
+    @Html.DisplayFor(m => Model.boughtData.description)
+</body>

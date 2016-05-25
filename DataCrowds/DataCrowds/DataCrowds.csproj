@@ -183,6 +183,10 @@
     <Compile Include="Migrations\201605241913268_initial.Designer.cs">
       <DependentUpon>201605241913268_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605241606130_update dataset.cs" />
+    <Compile Include="Migrations\201605241606130_update dataset.Designer.cs">
+      <DependentUpon>201605241606130_update dataset.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -190,6 +194,7 @@
     <Compile Include="Controllers\DataSetsController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MarketplaceView.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\ReportViewModel.cs" />
     <Compile Include="Models\Response.cs" />
@@ -303,6 +308,8 @@
     <Content Include="Views\Surveys\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\Surveys\EditorTemplates\Survey.cshtml" />
     <Content Include="Views\Surveys\Index.cshtml" />
+    <Content Include="Views\Marketplace\BuyDataSet.cshtml" />
+    <Content Include="Views\Marketplace\ConfirmBuyDataSet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -322,6 +329,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605241913268_initial.resx">
       <DependentUpon>201605241913268_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605241606130_update dataset.resx">
+      <DependentUpon>201605241606130_update dataset.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

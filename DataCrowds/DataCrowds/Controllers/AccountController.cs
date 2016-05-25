@@ -40,6 +40,9 @@ namespace DataCrowds.Controllers
             }
         }
 
+        private ApplicationDbContext db = new ApplicationDbContext();
+
+
         public ApplicationUserManager UserManager
         {
             get

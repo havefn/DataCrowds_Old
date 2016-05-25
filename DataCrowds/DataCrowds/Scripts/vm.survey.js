@@ -25,6 +25,9 @@
     self.editQuestion = function(item) {
         self.current(item);
         self.modal.modal();
+        console.log("asdasdadasasd");
+        self.modal.modal('show');
+        //self.modal.removeClass("hide");
     };
 
     self.saveQuestion = function(item) {

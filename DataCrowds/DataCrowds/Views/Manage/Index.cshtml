@@ -8,7 +8,7 @@
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
     <h4>Change your account settings</h4>
-    <hr />
+    <hr />  
     <dl class="dl-horizontal">
         <dt>Username:</dt>
         <dd>
@@ -108,12 +108,11 @@
         <table class="table">
             <tr>
                 <th>
-                    head1
+                    owned1
                 </th>
                 <th>
-                    head2
+                    owned2
                 </th>
-                <th></th>
             </tr>
             
             @if (Model.OwnedData != null)
@@ -137,9 +136,40 @@
                 }
 
             }
+        </table>
+
+        <table class="table">
+            <tr>
+                <th>
+                    bought1
+                </th>
+                <th>
+                    bought2
+                </th>
+            </tr>
+            
+            @if (Model.BoughtData != null)
+            {
+
+                foreach (var item in Model.BoughtData)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.description)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            }
 
         </table>
 
+        
 
     </dl>
 </div>
