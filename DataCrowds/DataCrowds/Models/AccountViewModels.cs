@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace DataCrowds.Models
@@ -15,14 +17,18 @@ namespace DataCrowds.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        /*[Required]
-        public DateTime birthDate { set; get; }
+        [Required]
+        [DisplayName("Date of Birth")]
+        [DataType(DataType.Date)]
+        public DateTime? birthDate { get; set; }
 
         [Required]
+        [Display(Name = "Current Occupation")]
         public string occupation { get; set; }
 
         [Required]
-        public Gender gender { get; set; }*/
+        [Display(Name = "Gender")]
+        public string gender { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -81,7 +87,7 @@ namespace DataCrowds.Models
     {
         [Required]
         [Display(Name = "Username")]
-        public string Username { get; set; }
+        public string username { get; set; }
 
         [Required]
         [EmailAddress]
@@ -98,7 +104,19 @@ namespace DataCrowds.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-        
+
+        [Required]
+        [DisplayName("Date of Birth")]
+        [DataType(DataType.Date)]
+        public DateTime? birthDate { get; set; }
+
+        [Required]
+        [Display(Name = "Current Occupation")]
+        public string occupation { get; set; }
+
+        [Required]
+        [Display(Name = "Gender")]
+        public string gender { get; set; }
     }
 
     public class ResetPasswordViewModel

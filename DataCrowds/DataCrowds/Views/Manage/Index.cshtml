@@ -8,14 +8,18 @@
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
     <h4>Change your account settings</h4>
-    <hr />
+    <hr />  
     <dl class="dl-horizontal">
-        <dt>Password:</dt>
+        <dt>Username:</dt>
         <dd>
+               @Model.username @*[@Html.ActionLink("Change", "ChangeUsername")]*@
+        </dd>
+        <dt>Password: </dt>
+        <dd> 
             [
             @if (Model.HasPassword)
             {
-                @Html.ActionLink("Change your password", "ChangePassword")
+                @Html.ActionLink("Change", "ChangePassword")
             }
             else
             {
@@ -23,10 +27,27 @@
             }
             ]
         </dd>
+        <dt>Email Address:</dt>
+        <dd>
+            @Model.email  @*[@Html.ActionLink("Change", "ChangeEmail")]*@
+        </dd>
+        <dt>Occupation:</dt>
+        <dd>
+            @Model.occupation  @*[@Html.ActionLink("Change", "ChangeJob")]*@
+        </dd>
+        <dt>Gender:</dt>
+        <dd>
+            @Model.gender  @*[@Html.ActionLink("Change", "ChangeGender")]*@
+        </dd>
+        <dt>Birth Date:</dt>
+        <dd>
+                @Model.birthDate.Date
+        </dd>
+        
+        
         <dt>External Logins:</dt>
         <dd>
-            @Model.Logins.Count [
-            @Html.ActionLink("Manage", "ManageLogins") ]
+            @Model.Logins.Count  [ @Html.ActionLink("Manage", "ManageLogins") ]
         </dd>
         @*
             Phone Numbers can used as a second factor of verification in a two-factor authentication system.
@@ -56,13 +77,13 @@
                 }
             </dd>
         *@
-        <dt>Two-Factor Authentication:</dt>
+        @*@<dt>Two-Factor Authentication:</dt>
         <dd>
             <p>
                 There are no two-factor authentication providers configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
                 for details on setting up this ASP.NET application to support two-factor authentication.
             </p>
-            @*@if (Model.TwoFactor)
+            @*if (Model.TwoFactor)
                 {
                     using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
@@ -81,7 +102,74 @@
                         <input type="submit" value="Enable" class="btn btn-link" />
                         </text>
                     }
-                }*@
-        </dd>
+                }
+        </dd>*@
+
+        <table class="table">
+            <tr>
+                <th>
+                    owned1
+                </th>
+                <th>
+                    owned2
+                </th>
+            </tr>
+            
+            @if (Model.OwnedData != null)
+            {
+
+                foreach (var item in Model.OwnedData)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.description)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+
+            }
+        </table>
+
+        <table class="table">
+            <tr>
+                <th>
+                    bought1
+                </th>
+                <th>
+                    bought2
+                </th>
+            </tr>
+            
+            @if (Model.BoughtData != null)
+            {
+
+                foreach (var item in Model.BoughtData)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.description)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+
+        
+
     </dl>
 </div>

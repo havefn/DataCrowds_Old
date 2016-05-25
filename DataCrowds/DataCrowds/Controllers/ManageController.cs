@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using DataCrowds.Models;
+using System.Collections.Generic;
+using System.Data.Entity;
 
 namespace DataCrowds.Controllers
 {
@@ -15,6 +17,7 @@ namespace DataCrowds.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public ManageController()
         {
@@ -50,6 +53,7 @@ namespace DataCrowds.Controllers
             }
         }
 
+        
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
@@ -64,13 +68,21 @@ namespace DataCrowds.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+            var user = db.Users.Include("BoughtData").Single(x => x.Id == userId);
             var model = new IndexViewModel
             {
+                birthDate = db.Users.Find(userId).birthDate,
+                occupation = db.Users.Find(userId).occupation,
+                gender = db.Users.Find(userId).gender,
+                username = User.Identity.Name,
+                email = db.Users.Find(userId).Email,
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+                BoughtData = user.BoughtData
+
             };
             return View(model);
         }

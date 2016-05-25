@@ -5,6 +5,7 @@
     <tr>
         <td>@Html.ActionLink(p.title,"Details","DataSets",new { id = p.Id },null)</td>
         <td>@p.description</td>
+        <td>@Html.ActionLink("Buy" , "BuyDataSet", "MarketPlace", new { id = p.Id } ,null)</td>
     </tr>
 }
 

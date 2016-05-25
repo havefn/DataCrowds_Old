@@ -1,5 +1,7 @@
 ﻿@model DataCrowds.Models.Survey
 
+@Scripts.Render("~/bundles/knockout")
+
 <div class="page-header">
     <a class="pull-right" href="@Url.Action("Index")">Back to Survey List &rarr;</a>
     <h2>@ViewData["title"]</h2>
@@ -95,33 +97,37 @@
     </div>
 </form>
 
-<div id="add-question" class="modal hide fade" data-bind="with: current">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h3>Add Question</h3>
-    </div>
-    <div class="modal-body">
-        <div class="row">
-            <div class="span3">
-                <label for="Title">Title</label>
-                <input type="text" id="Title"  name="Title" data-bind="value: title" />
+<div id="add-question" class="modal fade" data-bind="with: current">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3>Add Question</h3>
             </div>
-            <div class="span3">
-                <label for="Type">Type</label>
-                <select id="Type" name="Type" data-bind="value: type">
-                    <option>Yes/No</option>
-                    <option>Number</option>
-                </select>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="span3">
+                        <label for="Title">Title</label>
+                        <input type="text" id="Title" name="Title" data-bind="value: title" />
+                    </div>
+                    <div class="span3">
+                        <label for="Type">Type</label>
+                        <select id="Type" name="Type" data-bind="value: type">
+                            <option>Yes/No</option>
+                            <option>Number</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span6">
+                        <textarea id="Body" name="Body" data-bind="cleditor: body"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" data-bind="click: $root.saveQuestion">Save</button>
             </div>
         </div>
-        <div class="row">
-            <div class="span6">
-                <textarea id="Body" name="Body" data-bind="cleditor: body"></textarea>
-            </div>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal">Close</button>
-        <button class="btn btn-primary" data-bind="click: $root.saveQuestion">Save</button>
     </div>
 </div>

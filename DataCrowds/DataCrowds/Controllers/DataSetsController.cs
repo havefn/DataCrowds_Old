@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace DataCrowds.Models
 {
@@ -40,6 +43,8 @@ namespace DataCrowds.Models
         {
             return View();
         }
+
+
 
         // POST: DataSets/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 

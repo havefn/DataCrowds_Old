@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model DataCrowds.Models.ReceiptView
+
+<body>
+
+    @Html.DisplayFor(model => model.User.Email)
+    @Html.DisplayFor(model => model.boughtData.title)
+    @Html.DisplayFor(model => model.boughtData.description)
+
+    @Html.ActionLink("Confimr","ConfirmBuyDataSet","Marketplace",new {id = Model.boughtData.Id},null)
+</body>
