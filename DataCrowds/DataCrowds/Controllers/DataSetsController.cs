@@ -51,7 +51,7 @@ namespace DataCrowds.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,title,description")] DataSet dataSet)
+        public ActionResult Create([Bind(Include = "Id,title,description")] DataSet dataSet, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
@@ -64,10 +64,12 @@ namespace DataCrowds.Models
                     return HttpNotFound();
                 }
 
+                
+                data.UserId = userId;
+                data.file = file;
                 var user = db.Users.Include("OwnedData").Single(x => x.Id == userId);
                 user.OwnedData.Add(data);
-                data.UserId = userId;
-                
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

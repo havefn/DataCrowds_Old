@@ -71,6 +71,7 @@ namespace DataCrowds.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        UserId = c.String(),
                         title = c.String(),
                         description = c.String(),
                         ApplicationUser_Id = c.String(maxLength: 128),

@@ -9,15 +9,14 @@ namespace DataCrowds.Models
 {
     public class DataSet
     {
+        public HttpPostedFileBase file;
+
         public int Id { get; set; }
 
         public string UserId { get; set; }
 
         public string title { get; set; }
 
-        public string description { get; set; }
-
-        [NotMapped]
-        public HttpPostedFileBase file { get; set; }        
+        public string description { get; set; }      
     }
 }
