@@ -10,10 +10,10 @@ namespace DataCrowds
         {
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                            "~/Scripts/jquery-{version}.js",
-                            "~/Scripts/jquery.unobtrusive-ajax.*")
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery.unobtrusive-ajax.*")
                         .Include("~/Scripts/jquery-migrate-1.1.1.js",
-                                 "~/Scripts/jquery.cookie.js"));
+                            "~/Scripts/jquery.cookie.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/complement").Include(
                             "~/Scripts/waypoints.min.js",
@@ -22,7 +22,7 @@ namespace DataCrowds
                             "~/Scripts/front.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                            "~/Scripts/jquery.validate*"));
+                        "~/Scripts/jquery.validate*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -30,12 +30,9 @@ namespace DataCrowds
                             "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                            "~/Scripts/bootstrap.js",
-                            "~/Scripts/respond.js")
-                        .Include("~/Scripts/bootstrap-datepicker.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/owl").Include(
-                            "~/Scripts/owl.carousel.js"));
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/respond.js")
+                            .Include("~/Scripts/bootstrap-datepicker.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                             "~/Content/bootstrap.css",
@@ -43,28 +40,28 @@ namespace DataCrowds
                             "~/Content/style.default.css",
                             "~/Content/Main.css"));
 
-            bundles.Add(new StyleBundle("~/Content/css/owl").Include(
+            bundles.Add(new StyleBundle("~/Content/cssowl").Include(
                             "~/Content/owl.carousel.css",
                             "~/Content/owl.theme.css",
-                            "~/Content/bootstrap.css",
-                            "~/Content/site.css"));
+                      "~/Content/bootstrap.css",
+                      "~/Content/site.css"));
 
             // ====================================================================================
             // STYLES
             // ====================================================================================
 
             bundles.Add(new StyleBundle("~/Content/bootstrap")
-                        .Include("~/Content/bootstrap.css")
-                        .Include("~/Content/bootstrap-datepicker.css"));
+                            .Include("~/Content/bootstrap.css")
+                            .Include("~/Content/bootstrap-datepicker.css"));
 
             bundles.Add(new StyleBundle("~/Content/cleditor")
-                        .Include("~/Content/jquery.cleditor.css"));
+                            .Include("~/Content/jquery.cleditor.css"));
 
             bundles.Add(new StyleBundle("~/Content/toastr")
-                        .Include("~/Content/toastr.css"));
+                            .Include("~/Content/toastr.css"));
 
             bundles.Add(new StyleBundle("~/Content/site")
-                        .Include("~/Content/site.css"));
+                            .Include("~/Content/site.css"));
 
             // ====================================================================================
             // SCRIPTS
@@ -75,34 +72,34 @@ namespace DataCrowds
             //                );
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval")
-                        .Include("~/Scripts/jquery.unobtrusive*")
-                        .Include("~/Scripts/jquery.validate*"));
+                            .Include("~/Scripts/jquery.unobtrusive*")
+                            .Include("~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/cleditor")
-                        .Include("~/Scripts/jquery.cleditor.js")
-                        .Include("~/Scripts/knockout.cleditor.js"));
+                            .Include("~/Scripts/jquery.cleditor.js")
+                            .Include("~/Scripts/knockout.cleditor.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/knockout")
-                        .Include("~/Scripts/knockout-{version}.js")
-                        .Include("~/Scripts/knockout.mapping-latest.js")
-                        .Include("~/Scripts/knockout.enter.js")
-                        .Include("~/Scripts/knockout.validation.js"));
+                            .Include("~/Scripts/knockout-{version}.js")
+                            .Include("~/Scripts/knockout.mapping-latest.js")
+                            .Include("~/Scripts/knockout.enter.js")
+                            .Include("~/Scripts/knockout.validation.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/toastr")
-                        .Include("~/Scripts/toastr.js"));
+                            .Include("~/Scripts/toastr.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/models")
-                        .Include("~/Scripts/vm.department.js")
-                        .Include("~/Scripts/vm.question.js")
-                        .Include("~/Scripts/vm.responselist.js")
-                        .Include("~/Scripts/vm.survey.js")
-                        .Include("~/Scripts/vm.surveylist.js"));
+                            .Include("~/Scripts/vm.department.js")
+                            .Include("~/Scripts/vm.question.js")
+                            .Include("~/Scripts/vm.responselist.js")
+                            .Include("~/Scripts/vm.survey.js")
+                            .Include("~/Scripts/vm.surveylist.js"));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when
-            // you're ready for production, use the build tool at http://modernizr.com to pick
+            // Use the development version of Modernizr to develop with and learn from. Then, when 
+            // you're ready for production, use the build tool at http://modernizr.com to pick 
             // only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr")
-                        .Include("~/Scripts/modernizr-*"));
+                            .Include("~/Scripts/modernizr-*"));
         }
     }
 }
