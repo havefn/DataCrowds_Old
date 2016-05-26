@@ -9,7 +9,7 @@ namespace DataCrowds.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(DataCrowds.Models.ApplicationDbContext context)

@@ -172,10 +172,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarketplaceController.cs" />
-    <Compile Include="Migrations\201605251838343_initial.cs" />
-    <Compile Include="Migrations\201605251838343_initial.Designer.cs">
-      <DependentUpon>201605251838343_initial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ReportsController.cs" />
     <Compile Include="Controllers\ResponsesController.cs" />
@@ -204,6 +200,96 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\img\apple-touch-icon-114x114.png" />
+    <Content Include="Content\img\apple-touch-icon-120x120.png" />
+    <Content Include="Content\img\apple-touch-icon-144x144.png" />
+    <Content Include="Content\img\apple-touch-icon-152x152.png" />
+    <Content Include="Content\img\apple-touch-icon-57x57.png" />
+    <Content Include="Content\img\apple-touch-icon-72x72.png" />
+    <Content Include="Content\img\apple-touch-icon-76x76.png" />
+    <Content Include="Content\img\apple-touch-icon.png" />
+    <Content Include="Content\img\banner.jpg" />
+    <Content Include="Content\img\banner2.jpg" />
+    <Content Include="Content\img\basketsquare.jpg" />
+    <Content Include="Content\img\blog-avatar.jpg" />
+    <Content Include="Content\img\blog-avatar2.jpg" />
+    <Content Include="Content\img\blog-medium.jpg" />
+    <Content Include="Content\img\blog-recent-2.jpg" />
+    <Content Include="Content\img\blog-recent-3.jpg" />
+    <Content Include="Content\img\blog-recent.jpg" />
+    <Content Include="Content\img\blog.jpg" />
+    <Content Include="Content\img\blog2.jpg" />
+    <Content Include="Content\img\carousel %28a%29.png" />
+    <Content Include="Content\img\carousel %28b%29.png" />
+    <Content Include="Content\img\customer-1.png" />
+    <Content Include="Content\img\customer-2.png" />
+    <Content Include="Content\img\customer-3.png" />
+    <Content Include="Content\img\customer-4.png" />
+    <Content Include="Content\img\customer-5.png" />
+    <Content Include="Content\img\customer-6.png" />
+    <Content Include="Content\img\detailbig1.jpg" />
+    <Content Include="Content\img\detailbig2.jpg" />
+    <Content Include="Content\img\detailbig3.jpg" />
+    <Content Include="Content\img\detailsquare.jpg" />
+    <Content Include="Content\img\detailsquare2.jpg" />
+    <Content Include="Content\img\detailsquare3.jpg" />
+    <Content Include="Content\img\favicon.ico" />
+    <Content Include="Content\img\fixed-background-1.jpg" />
+    <Content Include="Content\img\fixed-background-2.jpg" />
+    <Content Include="Content\img\home-try.jpg" />
+    <Content Include="Content\img\home.jpg" />
+    <Content Include="Content\img\homepage-slider.jpg" />
+    <Content Include="Content\img\logo-small.png" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logoDC.png" />
+    <Content Include="Content\img\logoDC.svg" />
+    <Content Include="Content\img\logoDC_black.png" />
+    <Content Include="Content\img\main-slider1.jpg" />
+    <Content Include="Content\img\main-slider2.jpg" />
+    <Content Include="Content\img\main-slider3.jpg" />
+    <Content Include="Content\img\main-slider4.jpg" />
+    <Content Include="Content\img\marker.png" />
+    <Content Include="Content\img\men.jpg" />
+    <Content Include="Content\img\page-1.jpg" />
+    <Content Include="Content\img\page-2.jpg" />
+    <Content Include="Content\img\page-3.jpg" />
+    <Content Include="Content\img\payment.png" />
+    <Content Include="Content\img\person-1.jpg" />
+    <Content Include="Content\img\person-2.jpg" />
+    <Content Include="Content\img\person-3.png" />
+    <Content Include="Content\img\person-4.jpg" />
+    <Content Include="Content\img\photogrid.jpg" />
+    <Content Include="Content\img\portfolio-1.jpg" />
+    <Content Include="Content\img\portfolio-2.jpg" />
+    <Content Include="Content\img\portfolio-3.jpg" />
+    <Content Include="Content\img\portfolio-4.jpg" />
+    <Content Include="Content\img\portfolio-5.jpg" />
+    <Content Include="Content\img\portfolio-6.jpg" />
+    <Content Include="Content\img\portfolio-7.jpg" />
+    <Content Include="Content\img\portfolio-8.jpg" />
+    <Content Include="Content\img\portfolio-9.jpg" />
+    <Content Include="Content\img\product1.jpg" />
+    <Content Include="Content\img\product2.jpg" />
+    <Content Include="Content\img\product3.jpg" />
+    <Content Include="Content\img\product4.jpg" />
+    <Content Include="Content\img\slide1.jpg" />
+    <Content Include="Content\img\slide2.jpg" />
+    <Content Include="Content\img\slide3.jpg" />
+    <Content Include="Content\img\slide4.jpg" />
+    <Content Include="Content\img\slide5.jpg" />
+    <Content Include="Content\img\slide6.jpg" />
+    <Content Include="Content\img\template-easy-code.png" />
+    <Content Include="Content\img\template-easy-customize-less.png" />
+    <Content Include="Content\img\template-easy-customize.png" />
+    <Content Include="Content\img\template-homepage.png" />
+    <Content Include="Content\img\template-mac.png" />
+    <Content Include="Content\img\template-tablets-2.png" />
+    <Content Include="Content\img\template-tablets.png" />
+    <Content Include="Content\img\texture-bw.png" />
+    <Content Include="Content\img\texture-turquoise.png" />
+    <Content Include="Content\img\texture-violet.png" />
+    <Content Include="Content\img\women.jpg" />
     <Content Include="Content\Main.css">
       <DependentUpon>Main.scss</DependentUpon>
     </Content>
@@ -220,7 +306,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\bootstrap-hover-dropdown.js" />
@@ -235,10 +320,11 @@
       <CompileStyle>Nested</CompileStyle>
       <DebugInfo>False</DebugInfo>
     </Content>
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\DataCrowds.pubxml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -358,11 +444,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605251838343_initial.resx">
-      <DependentUpon>201605251838343_initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
