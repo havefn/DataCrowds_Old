@@ -9,7 +9,6 @@ namespace DataCrowds.Models
 {
     public class DataSet
     {
-        public HttpPostedFileBase file;
 
         public int Id { get; set; }
 
