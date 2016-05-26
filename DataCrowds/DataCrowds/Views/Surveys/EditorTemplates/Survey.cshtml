@@ -11,29 +11,45 @@
     <h4 class="well well-small">Survey</h4>
 
     <div class="row">
-        <div class="span6">
-            @Html.LabelFor(x => x.Name)
-            @Html.TextBoxFor(x => x.Name, new {@class = "span6"})
-        </div>
-        <div class="span6">
-            <label>Start / End Date</label> 
-            @Html.EditorFor(x => x.StartDate)
-            @Html.EditorFor(x => x.EndDate)
+        @*<div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>*@
+        <div class="col-xs-10 col-xs-offset-1">
+            @*  col-xs-10 col-xs-offset-1 *@
+            <div class="form-group">
+                @Html.LabelFor(x => x.Name, new { @for = "input-nama" })
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @type = "text", @placeholder = "Nama survey" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Haha", "Start Date", new { @for = "StartDate" })
+                @*<input class="span2" data-val="true" data-val-date="The field StartDate must be a date." data-val-required="The StartDate field is required." id="StartDate" name="StartDate" type="text" value="5/26/2016">*@
+                @*@Html.EditorFor(x => x.StartDate, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control", @type = "text" })
+                @Html.Label("Haha", "End Date", new { @for = "EndDate" })
+                @*<input class="span2" data-val="true" data-val-date="The field EndDate must be a date." data-val-required="The EndDate field is required." id="EndDate" name="EndDate" type="text" value="5/26/2017">*@
+                @*@Html.EditorFor(x => x.EndDate, new { @class = "form-control"})*@
+                @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control", @type = "text" })
+            </div>
         </div>
     </div>
-    
+
     <h4 class="well well-small">
         <button class="btn btn-mini pull-right" data-bind="click: newQuestion">
             <i class="icon-plus"></i> Add Question
         </button>
         Questions
     </h4>
-    
+
     <p data-bind="visible: !hasQuestions()">
         <span class="label label-info">Heads up!</span>
         You haven't added any questions.
     </p>
-    
+
     <div id="questions" data-bind="visible: hasQuestions, foreach: { data: questions, afterAdd: afterAdd }">
         <div class="accordion-group">
             <div class="row accordion-heading">
@@ -82,7 +98,7 @@
                 <div class="accordion-inner" data-bind="html: body"></div>
             </div>
         </div>
-        
+
         <input type="hidden" data-bind="attr: { name: 'Questions['+$index()+'].Id', value: id }" />
         <input type="hidden" data-bind="attr: { name: 'Questions['+$index()+'].Title', value: title }" />
         <input type="hidden" data-bind="attr: { name: 'Questions['+$index()+'].Type', value: type }" />
@@ -90,7 +106,7 @@
         <input type="hidden" data-bind="attr: { name: 'Questions['+$index()+'].Priority', value: $index() }" />
         <input type="hidden" data-bind="attr: { name: 'Questions['+$index()+'].IsActive' }, value: isActive" />
     </div>
-    
+
     <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="Save Survey" />
         <a class="btn" href="@Url.Action("Index")">Cancel</a>
@@ -105,23 +121,27 @@
                 <h3>Add Question</h3>
             </div>
             <div class="modal-body">
+
                 <div class="row">
-                    <div class="span3">
-                        <label for="Title">Title</label>
-                        <input type="text" id="Title" name="Title" data-bind="value: title" />
+                    
+                    @*<div class="span3">
+                            <label for="Title">Title</label>
+                            <input type="text" id="Title" name="Title" data-bind="value: title" />
+                        </div>*@
+                    <div class="col-xs-10 col-xs-offset-1">
+                        <div class="form-group">
+                            @Html.Label("title", "Title", new { @for = "Title" })
+                            @Html.TextBox("keyword", null, new { @class = "form-control", type = "text", @id = "Title", @name = "Title", @data_bind = "value: title" })
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("type", "Type", new { @for = "Type" })
+                            @Html.DropDownList("type", new SelectList(new[] { "Yes/No", "Number" }), new { @class = "form-control", @id = "Type", @name = "Type", @data_bind = "value: type" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextArea("type", null, new { @class = "cleditor form-control", @rows = "3", @id = "input", @name = "input", @data_bind = "cleditor: body" })
+                        </
                     </div>
-                    <div class="span3">
-                        <label for="Type">Type</label>
-                        <select id="Type" name="Type" data-bind="value: type">
-                            <option>Yes/No</option>
-                            <option>Number</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="span6">
-                        <textarea id="Body" name="Body" data-bind="cleditor: body"></textarea>
-                    </div>
+                    
                 </div>
             </div>
             <div class="modal-footer">

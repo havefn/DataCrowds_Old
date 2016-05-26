@@ -31,11 +31,11 @@
                 <div class="navbar-header">
 
                     <a class="navbar-brand home" href="@Url.Action("Index", "Home")">
-                        @*<img src="@Url.Content("~/Content/img/logo.png")" alt="Universal logo" class="hidden-xs hidden-sm">
-                            <img src="@Url.Content("~/Content/img/logo-small.png")" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - go to homepage</span>*@
-                        <p>
-                            DataCrowds
-                        </p>
+                        <img src="@Url.Content("~/Content/img/logoDC_black.png")" height="40" alt="Universal logo" class="hidden-xs hidden-sm">
+                        <img src="@Url.Content("~/Content/img/logoDC_black.png")" height="50" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - go to homepage</span>
+                        @*<p>
+                                DataCrowds
+                            </p>*@
                     </a>
                     <div class="navbar-buttons">
                         <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -67,19 +67,19 @@
                                         <div class="yamm-content">
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                    <img src="img/template-easy-customize.png" class="img-responsive hidden-xs" alt="">
+                                                    <img src="@Url.Content("~/Content/img/logoDC_black.png")" class="img-responsive hidden-xs" alt="">
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <h5>Survey</h5>
                                                     <ul>
                                                         <li>
-                                                            <a href="template-accordions.html">Create</a>
+                                                            <a href="@Url.Action("Index", "Surveys")">Create</a>
                                                         </li>
                                                         <li>
-                                                            <a href="template-alerts.html">Reports</a>
+                                                            <a href="@Url.Action("Index", "Reports")">Reports</a>
                                                         </li>
                                                         <li>
-                                                            <a href="template-buttons.html">Responses</a>
+                                                            <a href="@Url.Action("Index", "Responses")">Responses</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -87,7 +87,7 @@
                                                     <h5>User</h5>
                                                     <ul>
                                                         <li>
-                                                            <a href="template-header-nosticky.html">Manage</a>
+                                                            <a href="@Url.Action("Index", "Manage")">Manage</a>
                                                         </li>
                                                     </ul>
                                                 </div>
