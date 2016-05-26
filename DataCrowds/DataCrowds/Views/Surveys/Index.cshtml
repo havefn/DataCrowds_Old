@@ -15,11 +15,20 @@
     </script>
 }
 
-<div class="page-header">
-    <a class="btn btn-success pull-right" href="@Url.Action("Create")">
-        <i class="icon-plus"></i> New Survey
-    </a>
-    <h2>Surveys <small>Add or manage surveys</small></h2>
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 text-center">
+            <div class="page-header">
+                <h2 class="title">Surveys</h2>
+            </div>
+            <h2>
+                <small>Add or manage surveys</small>
+            </h2>
+        </div>
+        <a class="btn btn-info pull-right" href="@Url.Action("Create")">
+            <i class="glyphicon glyphicon-plus"></i> New Survey
+        </a>
+    </div>
 </div>
 
 <table id="survey-list" class="table table-striped">

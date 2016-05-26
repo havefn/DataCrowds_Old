@@ -51,7 +51,50 @@
                         <li class="dropdown use-yamm yamm-fw">
                             <a href="@Url.Action("Index", "Marketplace")">Marketplace</a>
                         </li>
-                        <!-- ========== FULL WIDTH MEGAMENU ================== -->
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li class="dropdown use-yamm yamm-fw">
+                                <a href="@Url.Action("Index", "Dashboard")">SurCrowds</a>
+                            </li>
+
+                            <li class="dropdown use-yamm yamm-fw">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <div class="yamm-content">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <img src="img/template-easy-customize.png" class="img-responsive hidden-xs" alt="">
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <h5>Survey</h5>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="template-accordions.html">Create</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="template-alerts.html">Reports</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="template-buttons.html">Responses</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <h5>User</h5>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="template-header-nosticky.html">Manage</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        @*<!-- ========== FULL WIDTH MEGAMENU ================== -->
                         <li class="dropdown use-yamm yamm-fw">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">All Pages <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -234,9 +277,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <!-- ========== FULL WIDTH MEGAMENU END ================== -->
+                        <!-- ========== FULL WIDTH MEGAMENU END ================== -->*@
 
-                        <li class="dropdown">
+                        @*<li class="dropdown">
                             <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -250,7 +293,7 @@
                                 </li>
 
                             </ul>
-                        </li>
+                        </li>*@
                     </ul>
 
                 </div>
