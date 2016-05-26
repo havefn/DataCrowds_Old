@@ -172,6 +172,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarketplaceController.cs" />
+    <Compile Include="Migrations\201605260558282_redeploy-affan.cs" />
+    <Compile Include="Migrations\201605260558282_redeploy-affan.Designer.cs">
+      <DependentUpon>201605260558282_redeploy-affan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ReportsController.cs" />
     <Compile Include="Controllers\ResponsesController.cs" />
     <Compile Include="Controllers\SurvCrowdsController.cs" />
@@ -371,6 +375,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605251253405_initial.resx">
       <DependentUpon>201605251253405_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605260558282_redeploy-affan.resx">
+      <DependentUpon>201605260558282_redeploy-affan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
