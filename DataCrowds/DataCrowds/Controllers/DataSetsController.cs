@@ -20,7 +20,15 @@ namespace DataCrowds.Models
         // GET: DataSets
         public ActionResult Index()
         {
-            return View(db.DataSets.ToList());
+            List<DataSet> ds = new List<DataSet>();
+
+            foreach (DataSet data in db.DataSets) {
+                if (data.UserId == User.Identity.GetUserId()) {
+                    ds.Add(data);
+                }
+            }
+
+            return View(ds);
         }
 
 
