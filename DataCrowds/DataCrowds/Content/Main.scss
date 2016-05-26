@@ -19,9 +19,6 @@ body {
     border: none;
 }
 
-#response {
-    .bar {
-        padding: 0 0;
-        background-color: lighten(rgb(56, 167, 187), 20%);
-    }
+.home-carousel .dark-mask {
+    left: 1.3em;
 }
