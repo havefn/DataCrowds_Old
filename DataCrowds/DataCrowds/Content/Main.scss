@@ -1,11 +1,18 @@
 body {
-
 }
 
 .jumbotron {
     background: url('img/texture-bw.png') center center repeat;
     color: white;
     margin: 0 -2em .5em -2em;
+
+    .page-header {
+        border-bottom-color: lighten(#808080, 10%);
+    }
+
+    .title {
+        text-shadow: 0 3px 2px #808080;
+    }
 }
 
 #response {

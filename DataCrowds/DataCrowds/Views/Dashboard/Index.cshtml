@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Dashboard";
-    var surveys = (IEnumerable<DataCrowds.Models.Survey>) ViewBag.Surveys;
-    var responses = (IEnumerable<DataCrowds.Models.Response>) ViewBag.Responses;
+    var surveys = (IEnumerable<DataCrowds.Models.Survey>)ViewBag.Surveys;
+    var responses = (IEnumerable<DataCrowds.Models.Response>)ViewBag.Responses;
 }
 
 @section scripts
@@ -27,8 +27,18 @@
     </script>
 }
 
-<div class="page-header">
-    <h2>Surveys <small>Take surveys and view history</small></h2>
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 text-center">
+            <div class="page-header">
+                <h2 class="title">Surveys</h2>
+            </div>
+            <h2>
+                <small>Take surveys and view history</small>
+            </h2>
+
+        </div>
+    </div>
 </div>
 
 <ul id="tabs" class="nav nav-tabs">
@@ -82,7 +92,7 @@
                 </div>
                 <div class="span4 text-right">
                     <span class="@(survey.IsActive ? "" : "muted")">
-                        Your Latest Response: 
+                        Your Latest Response:
                         @(survey.Responses.Select(x => x.CreatedOn.ToString("d")).FirstOrDefault() ?? "Never")
                     </span>
                 </div>
@@ -107,12 +117,12 @@
                     <tr>
                         <td><span class="muted">@response.CreatedOn.ToString("d")</span></td>
                         <td>
-                            @Html.ActionLink(response.Survey.Name, "Details", "Responses", 
-                                             new {surveyId = response.SurveyId, id = response.Id}, 
+                            @Html.ActionLink(response.Survey.Name, "Details", "Responses",
+                                             new { surveyId = response.SurveyId, id = response.Id },
                                              null)
                         </td>
                         <td>
-                            @response.GetAnswerCount()/@response.GetQuestionCount() - 
+                            @response.GetAnswerCount()/@response.GetQuestionCount() -
                             @response.CalculateScore().ToString("P1")
                         </td>
                         <td>
